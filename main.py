@@ -25,9 +25,7 @@ while len(guess_states) < 33:
     user_input = turtle.textinput(f"Guess States {len(guess_states)}/33", "Enter State: ").title()
 
     if user_input == "Exit":
-        for state in all_states:
-            if state not in guess_states:
-                missed_states.append(state)
+        missed_states = [state for state in all_states if state not in guess_states]
         print(missed_states)
         break
 
